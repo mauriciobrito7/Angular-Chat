@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+.primary, .badge-primary{
+  background: #19B5FE;
+  color: white;
+  font-weight: bold;
+}
+.badge-primary{
+  padding: .1em;
+  border-radius: 5px;
+}
+.secondary,.badge-secondary{
+  background: #00E640;
+  color: white;
+  font-weight: bold;
+}
+.badge-secondary {
+  padding: .1em;
+  border-radius: 5px;
+}
+.text-right{
+  text-align: right;
+}
+
+
+

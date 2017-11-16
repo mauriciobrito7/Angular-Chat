@@ -1,6 +1,22 @@
-<ul>
-  <li *ngFor="let item of myCollectionObservable | async">
-{{item.title}}
-  </li>
-</ul>
-<p>Hello</p>
+<div class="chat-window">
+  <h1>Chat</h1>
+  <hr>
+  <div class="app-mensaje" id="app-mensaje">
+    <div class="text-right">
+      <span class="primary badge-primary">Mauricio</span>
+      <p>Este es un mensaje de chat</p>
+    </div>
+    <div>
+      <span class="secondary badge-secondary">Maria</span>
+      <p>Este es un mensaje de chat</p>
+    </div>
+  </div>
+  <div class="chat-input">
+    <input type="text" name="mensaje" placeholder="Escribir mensaje"
+    (keyup.enter)="enviarMensaje(mensaje)"
+    [(ngModel)]="mensaje">
+  </div>
+</div>
+
+
+

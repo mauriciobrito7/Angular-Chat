@@ -8,11 +8,17 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  mensaje: string;
   myCollectionObservable: Observable<any[]>;
+
   constructor(private db: AngularFirestore) { }
 
   ngOnInit() {
   this.myCollectionObservable = this.db.collection('chats').valueChanges();
+  }
+
+  enviarMensaje(mensaje: string) {
+    console.log(mensaje);
   }
 
 }

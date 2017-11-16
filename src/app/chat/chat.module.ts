@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChatComponent } from './chat.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   declarations: [ChatComponent]
 })
