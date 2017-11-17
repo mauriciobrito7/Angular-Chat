@@ -10,7 +10,7 @@ export class ChatComponent implements OnInit {
   mensaje: string;
   mensajes: Observable<any>;
   elemento: any;
-  constructor(private chat: ChatService) { }
+  constructor(public chat: ChatService) { }
 
   ngOnInit() {
     this.elemento = document.getElementById('app-mensaje');
@@ -32,6 +32,8 @@ export class ChatComponent implements OnInit {
     this.chat.agregarMensaje(this.mensaje)
       .then( () => console.log('mensaje enviado') )
       .catch( (err) => console.log(err) );
+
+    this.mensaje = '';
   }
 
   salir() {

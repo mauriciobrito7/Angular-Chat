@@ -25,7 +25,7 @@ export class ChatService {
   login( proveedor: string ) {
     if ( proveedor === 'google' ) {
       this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    }else{
+    }else {
       this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
     }
   }
@@ -51,9 +51,10 @@ export class ChatService {
 
   agregarMensaje(texto: string) {
     const mensaje: Mensaje = {
-      nombre: 'Demo',
+      nombre: this.usuario.nombre,
       mensaje: texto,
-      fecha: new Date()
+      fecha: new Date(),
+      uid: this.usuario.uid
     };
     return this.itemsCollection.add(mensaje);
   }
