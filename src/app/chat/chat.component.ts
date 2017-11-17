@@ -15,12 +15,17 @@ export class ChatComponent implements OnInit {
     this.mensajes = this.chat.cargarMensajes();
     this.mensajes.subscribe(() => {
       this.mensajes = this.chat.cargarMensajes();
-      console.log(this.mensajes);
     });
   }
 
-  enviarMensaje(mensaje: string) {
-    console.log(mensaje);
+  enviarMensaje() {
+    if (this.mensaje.length === 0) {
+      return;
+    }
+
+    this.chat.agregarMensaje(this.mensaje)
+      .then( () => console.log('mensaje enviado') )
+      .catch( (err) => console.log(err) );
   }
 
 }

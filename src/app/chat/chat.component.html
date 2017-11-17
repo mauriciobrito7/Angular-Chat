@@ -2,13 +2,9 @@
   <h1>Chat</h1>
   <hr>
   <div class="app-mensaje" id="app-mensaje">
-    <div class="text-right">
-      <span class="primary badge-primary">Mauricio</span>
-      <p>Este es un mensaje de chat</p>
-    </div>
-    <div>
-      <span class="secondary badge-secondary">Maria</span>
-      <p>Este es un mensaje de chat</p>
+    <div class="text-right" *ngFor="let mensaje of chat.chats">
+      <span class="primary badge-primary">{{mensaje.nombre}}</span>
+      <p>{{mensaje.mensaje}}</p>
     </div>
   </div>
   <div class="chat-input">
