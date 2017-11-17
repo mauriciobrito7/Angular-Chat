@@ -13,10 +13,11 @@
   </div>
   <div class="chat-input">
     <input type="text" name="mensaje" placeholder="Escribir mensaje"
-    (keyup.enter)="enviarMensaje(mensaje)"
+    (keyup.enter)="enviarMensaje(mensajes)"
     [(ngModel)]="mensaje">
   </div>
 </div>
-
-
+<div *ngFor="let mensaje of mensajes | async">
+  {{mensaje.title}}
+</div>
 

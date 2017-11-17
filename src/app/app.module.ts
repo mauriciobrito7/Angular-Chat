@@ -1,3 +1,4 @@
+import { ChatService } from './services/chat.service';
 import { environment } from '../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -6,6 +7,7 @@ import {ShellComponent} from './core/shell/shell.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
 @NgModule({
   declarations: [
   ],
@@ -16,7 +18,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [ChatService],
   bootstrap: [ShellComponent]
 })
 export class AppModule { }
