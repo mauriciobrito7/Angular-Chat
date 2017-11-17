@@ -9,13 +9,19 @@ import { Observable } from 'rxjs/Observable';
 export class ChatComponent implements OnInit {
   mensaje: string;
   mensajes: Observable<any>;
+  elemento: any;
   constructor(private chat: ChatService) { }
 
   ngOnInit() {
+    this.elemento = document.getElementById('app-mensaje');
     this.mensajes = this.chat.cargarMensajes();
     this.mensajes.subscribe(() => {
       this.mensajes = this.chat.cargarMensajes();
+      setTimeout(() => {
+        this.elemento.scrollTop = this.elemento.scrollHeight;
+      }, 20);
     });
+
   }
 
   enviarMensaje() {

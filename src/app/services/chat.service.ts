@@ -12,11 +12,15 @@ export class ChatService {
   constructor(private afs: AngularFirestore) {
   }
   cargarMensajes() {
-    this.itemsCollection = this.afs.collection(this.path);
+    this.itemsCollection = this.afs.collection(this.path, ref => ref.orderBy('fecha','desc').limit(5));
     return this.itemsCollection.valueChanges()
     /*Trabaja con la respuesta de un observable la transforma y vuelve a regresar algo a lo cual nos podemos suscribir. Recibimos los mensajes que es la respuesta del observable*/
     .map( (mensajes: Mensaje[]) => {
-      this.chats = mensajes;
+      this.chats = [];
+      for ( let mensaje of mensajes){
+        this.chats.unshift(mensaje);
+      }
+      return this.chats;
     } );
   }
 

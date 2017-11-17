@@ -2,10 +2,15 @@
   margin: 0 auto !important;
   max-width: 360px;
   max-height: 480px;
-  padding: 1em;
   border: cornflowerblue 1px solid;
   border-radius: 10px;
   overflow-x: hidden;
+  &__title{
+    padding: 1em;
+  }
+}
+.app-mensaje{
+  padding: 1em;
 }
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -27,9 +32,7 @@
 
 .chat-input{
   margin: 0 auto !important;
-  width: 100%;
-  background: yellow;
-  position: absolute;
+  position: sticky;
   z-index: 1000;
   bottom:0;
 }

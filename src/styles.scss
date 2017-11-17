@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  box-sizing: border-box;
+  -ms-text-size-ajust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+
 .primary, .badge-primary{
   background: #19B5FE;
   color: white;
