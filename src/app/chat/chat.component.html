@@ -1,3 +1,4 @@
+<button (click)="salir()" *ngIf="chat.usuario.uid">salir</button>
 <div class="chat-window">
   <div class="chat-window__title">
     <h1>Chat</h1>
@@ -18,4 +19,4 @@
 <div *ngFor="let mensaje of mensajes | async">
   {{mensaje.title}}
 </div>
-<app-login></app-login>
+<app-login *ngIf="!chat.usuario.uid"></app-login>

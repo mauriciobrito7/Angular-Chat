@@ -21,12 +21,17 @@ export class ChatService {
       this.usuario.uid = user.uid;
     });
   }
-
+  // Login social con gmail y twitter
   login( proveedor: string ) {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    if ( proveedor === 'google' ) {
+      this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    }else{
+      this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+    }
   }
-
+  // Salir de la sesión
   logout() {
+    this.usuario = {};
     this.afAuth.auth.signOut();
   }
 
